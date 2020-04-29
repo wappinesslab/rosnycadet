@@ -1,0 +1,43 @@
+#dark-menu {
+    background: rgb(29, 29, 29);
+    padding: 30px !important;
+}
+
+div.home-big-menu {
+    display: block;
+    border: 1px solid rgb(0, 20, 196);
+    border-radius: 10px;
+    padding: 20px;
+    background: radial-gradient(circle, rgb(17, 0, 255) 0%, rgb(0, 2, 94) 100%);
+    cursor: pointer;
+}
+
+div.home-big-menu ion-icon {
+    margin: 0 auto;
+    display: block;
+}
+
+div.home-big-menu-red {
+    display: block;
+    border: 1px solid rgb(95, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    background: rgb(204, 0, 0);
+    background: radial-gradient(circle, rgb(245, 0, 0) 0%, rgb(105, 0, 0) 100%);
+    cursor: pointer;
+}
+div.home-big-menu-red ion-icon {
+    margin: 0 auto;
+    display: block;
+}
+
+img.img {
+    height: 50px;
+    widows: 50px;
+    margin: auto;
+    background-size: 100%;
+}
+
+.home-big-menu, .home-big-menu-red {
+    color: #fff;
+}

@@ -1,0 +1,20 @@
+.top-dark {
+    background: var(--ion-color-dark);
+    padding: 5px 20px;
+    color: white;
+    margin-top: -5px;
+}
+
+.middle-light {
+    background: var(--ion-color-light);
+    padding: 20px;
+    color: var(--ion-color-dark);
+
+}
+
+.bottom-blue {
+    background: var(--ion-color-primary);
+    padding: 20px;
+    color: white;
+
+}

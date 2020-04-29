@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rosny Cadet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-rc-photos-slider></app-rc-photos-slider>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <a class="home-rubrics" routerLink="/family">
+        <div class="rounded-dark-square">
+          <div class="transparent-dark">
+            <p class="title">Famille</p>
+          </div>
+        </div>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="home-rubrics" routerLink="/journey">
+        <div class="rounded-dark-square">
+          <div class="transparent-dark">
+            <p class="title">Parcours</p>
+          </div>
+        </div>
+        </a>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <a class="home-rubrics" routerLink="/speeches">
+          <div class="rounded-dark-square">
+            <div class="transparent-dark">
+              <p class="title">Discours</p>
+            </div>
+          </div>
+          </a>
+        </ion-col>
+        <ion-col>
+          <a class="home-rubrics" routerLink="/vision">
+          <div class="rounded-dark-square">
+            <div class="transparent-dark">
+              <p class="title">Vision</p>
+            </div>
+          </div>
+          </a>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary"></ion-toolbar>
+</ion-footer>

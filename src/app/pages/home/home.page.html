@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar [class.show-background]="showToolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (ionScroll)="onScroll($event)" [scrollEvents]="true">
+  
+  <app-home-slider-top></app-home-slider-top>
+
+  <app-home-square-menu></app-home-square-menu>
+
+  <img (click)="openPage('forms')" src="../../../assets/img/konkou-mol.jpg" alt="">
+  
+  <div class="news-sec-bg">
+    <ion-button expand="full" fill="clear">Actualités récentes</ion-button>
+  <ion-card *ngFor="let post of posts">
+    <ion-card-content>
+      <img style="object-fit: cover !important; height: 200px; padding: 0;" [src]="post.media_url">
+      <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
+      <ion-card-subtitle>{{post.date_gmt | date}}</ion-card-subtitle>
+
+      <ion-button expand="full" color="primary" [routerLink]="['/', 'article', post.id]" text-right> Lire la suite...</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-infinite-scroll threshold="300px" (ionInfinite)="loadMorePosts($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Plus d'articles...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  </div>
+
+</ion-content>
