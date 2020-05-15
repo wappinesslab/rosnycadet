@@ -5,12 +5,16 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 
+import * as firebase from 'firebase';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  public currentUser: string;
+  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -18,6 +22,13 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+
+    firebase.auth().onAuthStateChanged(async (user) => {
+      if (await user) {
+        return this.currentUser = user.uid;
+      }
+      console.log(this.currentUser);
+    });
   }
 
   initializeApp() {

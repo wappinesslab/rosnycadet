@@ -1,9 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
 
-<ion-content>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-list>
+    <form [formGroup]="loginForm">
+      <ion-item>
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input  formControlName="email" type="email" placeholder="Tapez votre email" [class.invalid]="!loginForm.controls['email'].valid && loginForm.controls['email'].touched"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf=" !loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+        <p>Veuillez taper un email valide</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Mot de passe:</ion-label>
+        <ion-input formControlName="password" type="password" [class.invalid]="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf=" !loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+        <p>Votre mot de passe doit avoir 6 caractères au minimum!</p>
+      </ion-item>
+
+      <br>
+      <ion-button expand="block" (click)="loginUser(loginForm)">
+        Connexion
+      </ion-button>
+
+      <ion-button fill="solid" color="danger" (click)="googleLogin()" expand="block" [disabled]="!loginForm.valid">
+        <ion-icon name="logo-google"></ion-icon> &nbsp; Connexion avec Google
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" routerLink="/signup">
+        S'inscrire
+      </ion-button>
+
+      <ion-button fill="clear" expand="block" routerLink="/reset-password">Réinitialiser le mot de passe?</ion-button>
+      <ion-button fill="outline" expand="block" routerLink="home">Aller à accueil</ion-button>
+    </form>
+  </ion-list>
 
 </ion-content>
+  

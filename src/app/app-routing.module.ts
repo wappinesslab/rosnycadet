@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'vision',
     loadChildren: () => import('./pages/rosnycadet/vision/vision.module').then( m => m.VisionPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 ];
 
 @NgModule({
